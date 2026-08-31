@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicare Checklist | Abt Insurance Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#173C31;
+    --forest-dark:#0F2A22;
+    --cream:#FAF6EE;
+    --paper:#FFFFFF;
+    --gold:#C79A47;
+    --gold-dark:#A87F35;
+    --ink:#1E2420;
+    --ink-soft:#5B655E;
+    --line:#E3DCC9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  header.top{
+    background:var(--forest);
+    color:var(--cream);
+    padding:16px 24px;
+    text-align:center;
+  }
+  header.top .brand{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+  }
+  header.top .contact{
+    font-size:13px;
+    opacity:.85;
+    margin-top:4px;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:36px 22px 60px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:32px;
+    line-height:1.1;
+    color:var(--forest-dark);
+    margin:0 0 8px;
+    text-align:center;
+  }
+  .sub{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:16px;
+    margin:0 0 32px;
+  }
+  .pdf-link{
+    display:block;
+    text-align:center;
+    margin:0 0 36px;
+    font-size:14.5px;
+  }
+  .pdf-link a{
+    color:var(--forest);
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1.5px solid var(--gold);
+  }
+  section.block{
+    margin-bottom:28px;
+  }
+  .block-title{
+    background:var(--forest);
+    color:var(--cream);
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    padding:11px 16px;
+    border-radius:8px 8px 0 0;
+  }
+  .block-items{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-top:none;
+    border-radius:0 0 8px 8px;
+    padding:6px 0;
+  }
+  .item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+    font-size:15.5px;
+    line-height:1.45;
+  }
+  .item:last-child{ border-bottom:none; }
+  .item input[type=checkbox]{
+    flex:none;
+    width:20px;
+    height:20px;
+    margin-top:2px;
+    accent-color: var(--forest);
+  }
+  .item label{ cursor:pointer; }
+  .annual .block-title{ background:var(--gold-dark); }
+
+  footer{
+    text-align:center;
+    margin-top:16px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+  footer a{ color:var(--forest); font-weight:600; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">Abt Insurance Agency</div>
+  <div class="contact">(888) 465-9728 &nbsp;•&nbsp; stephanie@abtinsuranceagency.com</div>
+</header>
+
+<div class="wrap">
+  <h1>Your Medicare Checklist</h1>
+  <p class="sub">A month-by-month roadmap from 6 months before you turn 65 through your annual plan review.</p>
+
+  <div class="pdf-link">Prefer a printable copy? <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/Medicare%20Checklist%20Abt%20Insurance%20Agency%202025%20%281%29%20%281%29.pdf" target="_blank">Download the PDF</a></div>
+
+  <section class="block">
+    <div class="block-title">6 Months Before Turning 65</div>
+    <div class="block-items">
+      <div class="item"><input type="checkbox" id="i1"><label for="i1">Learn about the 4 Parts of Medicare (Parts A, B, C and D).</label></div>
+      <div class="item"><input type="checkbox" id="i2"><label for="i2">Decide if you'll enroll in Medicare at 65, or delay if you are still working.</label></div>
+      <div class="item"><input type="checkbox" id="i3"><label for="i3">Compare Medicare Advantage Plans (Part C) to Medicare Supplement Plans.</label></div>
+      <div class="item"><input type="checkbox" id="i4"><label for="i4">Calculate your expected monthly costs (Part B premium, Supplement or Advantage premium, Part D premium if needed, and expected Rx copays).</label></div>
+      <div class="item"><input type="checkbox" id="i5"><label for="i5">Consider enrolling in a Medicare Supplement Plan up to 6 months early to lock in a lower premium.</label></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-title">3 Months Before Turning 65</div>
+    <div class="block-items">
+      <div class="item"><input type="checkbox" id="i6"><label for="i6">Enroll in Medicare Parts A and B online at ssa.gov/medicare, unless you are delaying Medicare.</label></div>
+      <div class="item"><input type="checkbox" id="i7"><label for="i7">Check the status of your enrollment online at ssa.gov. Medicare generally takes 2-4 weeks to process your application.</label></div>
+      <div class="item"><input type="checkbox" id="i8"><label for="i8">Enroll in a Medicare Supplement and Medicare Part D Rx Plan if needed.</label></div>
+      <div class="item"><input type="checkbox" id="i9"><label for="i9">OR enroll in a Part C Medicare Advantage Plan if needed.</label></div>
+      <div class="item"><input type="checkbox" id="i10"><label for="i10">Explore options for dental, vision and/or hearing coverage.</label></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-title">The Weeks Before / The Month You Turn 65</div>
+    <div class="block-items">
+      <div class="item"><input type="checkbox" id="i11"><label for="i11">Confirm receipt of your red, white and blue Medicare card from CMS.</label></div>
+      <div class="item"><input type="checkbox" id="i12"><label for="i12">Create an account on MyMedicare.gov to track claims and coverage.</label></div>
+      <div class="item"><input type="checkbox" id="i13"><label for="i13">Confirm receipt of your Medicare Supplement and Part D drug plan ID cards, or your Medicare Advantage Plan ID card.</label></div>
+      <div class="item"><input type="checkbox" id="i14"><label for="i14">Cancel any prior insurance coverage no longer needed.</label></div>
+    </div>
+  </section>
+
+  <section class="block annual">
+    <div class="block-title">Annually</div>
+    <div class="block-items">
+      <div class="item"><input type="checkbox" id="i15"><label for="i15">Look out for and review your Annual Notice of Change document, mailed by September 30th from your Part D plan or Medicare Advantage plan.</label></div>
+      <div class="item"><input type="checkbox" id="i16"><label for="i16">Shop your Part D Rx Plan or Medicare Advantage Plan with your agent from Oct. 15th – Dec. 7th.</label></div>
+      <div class="item"><input type="checkbox" id="i17"><label for="i17">Shop your Medigap/Medicare Supplement Plan with your agent at any time if lower rates are available.</label></div>
+    </div>
+  </section>
+
+  <footer>
+    Free, unbiased help with your Medicare needs.<br>
+    <a href="tel:8884659728">Call (888) 465-9728</a> &nbsp;•&nbsp; <a href="sms:7372227063">Text (737) 222-7063</a>
+  </footer>
+</div>
+
+</body>
+</html>
