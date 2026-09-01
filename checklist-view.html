@@ -112,6 +112,19 @@
     accent-color: var(--forest);
   }
   .item label{ cursor:pointer; }
+  .item-body{ display:flex; flex-direction:column; gap:6px; }
+  .learn-more{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--gold-dark);
+    text-decoration:none;
+    width:fit-content;
+  }
+  .learn-more svg{ flex:none; }
+  .learn-more:hover{ color:var(--forest); }
   .annual .block-title{ background:var(--gold-dark); }
 
   footer{
@@ -142,9 +155,9 @@
   <section class="block">
     <div class="block-title">6 Months Before Turning 65</div>
     <div class="block-items">
-      <div class="item"><input type="checkbox" id="i1"><label for="i1">Learn about the 4 Parts of Medicare (Parts A, B, C and D).</label></div>
-      <div class="item"><input type="checkbox" id="i2"><label for="i2">Decide if you'll enroll in Medicare at 65, or delay if you are still working.</label></div>
-      <div class="item"><input type="checkbox" id="i3"><label for="i3">Compare Medicare Advantage Plans (Part C) to Medicare Supplement Plans.</label></div>
+      <div class="item"><input type="checkbox" id="i1"><div class="item-body"><label for="i1">Learn about the 4 Parts of Medicare (Parts A, B, C and D).</label><a class="learn-more" href="https://youtu.be/Wci4BBmjXfo" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Learn More</a></div></div>
+      <div class="item"><input type="checkbox" id="i2"><div class="item-body"><label for="i2">Decide if you'll enroll in Medicare at 65, or delay if you are still working.</label><a class="learn-more" href="https://youtu.be/evYI75xJnKg" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Learn More</a></div></div>
+      <div class="item"><input type="checkbox" id="i3"><div class="item-body"><label for="i3">Compare Medicare Advantage Plans (Part C) to Medicare Supplement Plans.</label><a class="learn-more" href="https://youtu.be/t7XBSZaPx5E" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Learn More</a></div></div>
       <div class="item"><input type="checkbox" id="i4"><label for="i4">Calculate your expected monthly costs (Part B premium, Supplement or Advantage premium, Part D premium if needed, and expected Rx copays).</label></div>
       <div class="item"><input type="checkbox" id="i5"><label for="i5">Consider enrolling in a Medicare Supplement Plan up to 6 months early to lock in a lower premium.</label></div>
     </div>
@@ -156,7 +169,7 @@
       <div class="item"><input type="checkbox" id="i6"><label for="i6">Enroll in Medicare Parts A and B online at ssa.gov/medicare, unless you are delaying Medicare.</label></div>
       <div class="item"><input type="checkbox" id="i7"><label for="i7">Check the status of your enrollment online at ssa.gov. Medicare generally takes 2-4 weeks to process your application.</label></div>
       <div class="item"><input type="checkbox" id="i8"><label for="i8">Enroll in a Medicare Supplement and Medicare Part D Rx Plan if needed.</label></div>
-      <div class="item"><input type="checkbox" id="i9"><label for="i9">OR enroll in a Part C Medicare Advantage Plan if needed.</label></div>
+      <div class="item"><input type="checkbox" id="i9"><div class="item-body"><label for="i9">OR enroll in a Part C Medicare Advantage Plan if needed.</label><a class="learn-more" href="https://youtu.be/t7XBSZaPx5E" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Learn More</a></div></div>
       <div class="item"><input type="checkbox" id="i10"><label for="i10">Explore options for dental, vision and/or hearing coverage.</label></div>
     </div>
   </section>
