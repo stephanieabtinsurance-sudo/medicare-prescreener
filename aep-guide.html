@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEP Guide | Abt Insurance Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#173C31; --forest-dark:#0F2A22; --cream:#FAF6EE; --paper:#FFFFFF;
+    --gold:#C79A47; --gold-dark:#A87F35; --ink:#1E2420; --ink-soft:#5B655E; --line:#E3DCC9;
+    --red:#9C3B2E;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Source Sans 3', sans-serif; -webkit-font-smoothing:antialiased; }
+  header.top{ background:var(--forest); color:var(--cream); padding:16px 24px; text-align:center; }
+  header.top .brand{ font-family:'Fraunces', serif; font-size:19px; font-weight:600; }
+  header.top .contact{ font-size:13px; opacity:.85; margin-top:4px; }
+  .wrap{ max-width:680px; margin:0 auto; padding:36px 22px 60px; }
+  h1{ font-family:'Fraunces', serif; font-weight:600; font-size:29px; line-height:1.14; color:var(--forest-dark); margin:0 0 8px; text-align:center; }
+  .sub{ text-align:center; color:var(--ink-soft); font-size:16px; margin:0 0 24px; line-height:1.5; }
+  .pdf-link{ display:block; text-align:center; margin:0 0 28px; font-size:14.5px; }
+  .pdf-link a{ color:var(--forest); font-weight:600; text-decoration:none; border-bottom:1.5px solid var(--gold); }
+
+  /* Date banner */
+  .date-banner{
+    background:var(--forest-dark); color:var(--cream); border-radius:10px;
+    padding:16px 20px; text-align:center; margin-bottom:20px;
+  }
+  .date-banner .dates{ font-family:'Fraunces', serif; font-size:21px; font-weight:600; color:var(--gold); }
+  .date-banner .label{ font-size:13px; opacity:.85; margin-top:2px; }
+
+  /* Overview block */
+  .overview{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:20px; margin-bottom:20px;
+  }
+  .overview h2{ font-family:'Fraunces', serif; font-size:17px; color:var(--forest-dark); margin:0 0 10px; }
+  .overview p{ font-size:14.5px; line-height:1.55; margin:0 0 10px; }
+  .overview ul{ margin:0 0 10px; padding-left:20px; }
+  .overview li{ font-size:14.5px; line-height:1.55; margin-bottom:5px; }
+  .not-box{
+    background:var(--cream); border-left:3px solid var(--red); border-radius:6px;
+    padding:12px 14px; margin-top:12px;
+  }
+  .not-box p{ margin:0; font-size:13.8px; }
+  .not-box strong{ color:var(--red); }
+
+  /* Question tree */
+  .tree-nav{ font-size:13px; color:var(--ink-soft); margin-bottom:10px; min-height:18px; }
+  .tree-nav button{
+    background:none; border:none; color:var(--forest); font-weight:600; font-size:13px;
+    cursor:pointer; padding:0; text-decoration:underline;
+  }
+  .question-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:22px 20px;
+  }
+  .question-card h3{ font-family:'Fraunces', serif; font-size:18px; color:var(--forest-dark); margin:0 0 16px; text-align:center; }
+  .options{ display:flex; flex-direction:column; gap:10px; }
+  .opt-btn{
+    display:block; width:100%; text-align:left; padding:14px 16px; border-radius:9px;
+    border:1.5px solid var(--line); background:var(--cream); color:var(--ink); font-size:15px;
+    font-weight:600; cursor:pointer; font-family:inherit;
+  }
+  .opt-btn:hover{ border-color:var(--gold); background:var(--paper); }
+
+  .answer-panel{ display:none; }
+  .answer-panel.active{ display:block; }
+  .panel-section{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:20px; margin-bottom:16px;
+  }
+  .panel-section h3{ font-family:'Fraunces', serif; font-size:17px; color:var(--forest-dark); margin:0 0 12px; }
+  .panel-section p{ font-size:14.5px; line-height:1.6; margin:0 0 12px; }
+  .panel-section ul{ margin:0 0 12px; padding-left:20px; }
+  .panel-section li{ font-size:14.5px; line-height:1.6; margin-bottom:6px; }
+  .step-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:22px; height:22px; border-radius:50%; background:var(--forest); color:var(--cream);
+    font-size:12px; font-weight:700; margin-right:8px; flex:none;
+  }
+  .step-row{ display:flex; align-items:flex-start; gap:0; margin-bottom:12px; }
+  .step-row p{ margin:0; }
+
+  .highlight{ background:#FBF2DC; border-left:3px solid var(--gold-dark); border-radius:6px; padding:12px 14px; margin:10px 0; }
+  .highlight p{ margin:0; font-size:14px; }
+  .no-change-box{ background:var(--cream); border:1.5px dashed var(--forest); border-radius:8px; padding:14px 16px; margin:12px 0; }
+  .no-change-box p{ margin:0; font-size:14px; }
+  .no-change-box strong{ color:var(--forest-dark); }
+
+  .state-note{ font-size:13px; color:var(--ink-soft); background:var(--cream); border-radius:6px; padding:10px 12px; margin:10px 0; }
+
+  a.linkbtn{
+    display:inline-block; background:var(--forest); color:var(--cream); font-weight:700;
+    padding:11px 18px; border-radius:8px; text-decoration:none; font-size:14.5px; margin:4px 6px 4px 0;
+  }
+  a.linkbtn:hover{ background:var(--forest-dark); }
+  a.linkbtn.secondary{ background:var(--paper); color:var(--forest); border:1.5px solid var(--forest); }
+
+  .qual-list{ background:var(--cream); border-radius:8px; padding:14px 16px; margin:12px 0; }
+  .qual-list p.q{ font-weight:700; font-size:14px; margin:0 0 4px; color:var(--forest-dark); }
+  .qual-list .qitem{ margin-bottom:10px; }
+  .qual-list .qitem:last-child{ margin-bottom:0; }
+
+  .cta-box{ background:var(--forest-dark); color:var(--cream); border-radius:10px; padding:20px; text-align:center; margin-top:8px; }
+  .cta-box strong{ display:block; font-size:15.5px; margin-bottom:8px; }
+  .cta-box p{ font-size:13.5px; margin:0 0 12px; opacity:.9; line-height:1.5; }
+  .cta-box a.callbtn{ display:inline-block; background:var(--gold); color:var(--forest-dark); font-weight:700; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:14.5px; }
+
+  footer{ text-align:center; margin-top:24px; padding-top:20px; border-top:1px solid var(--line); font-size:12.5px; color:var(--ink-soft); line-height:1.6; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">Abt Insurance Agency</div>
+  <div class="contact">(888) 465-9728 &nbsp;•&nbsp; stephanie@abtinsuranceagency.com</div>
+</header>
+
+<div class="wrap">
+  <h1>Your AEP Game Plan</h1>
+  <p class="sub">A simple guide to what the Medicare Annual Enrollment Period is for — and what to actually do this fall.</p>
+
+  <div class="pdf-link">Prefer a printable copy? <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/AEP_Guide_Abt_Insurance_Agency.pdf" target="_blank">Download the PDF</a></div>
+
+  <div class="date-banner">
+    <div class="dates">October 15 – December 7</div>
+    <div class="label">Medicare's Annual Enrollment Period (AEP)</div>
+  </div>
+
+  <div class="overview">
+    <h2>What AEP Is Actually For</h2>
+    <p>During this window, if you're already on Medicare, you can:</p>
+    <ul>
+      <li>Change your Medicare Part D prescription drug plan</li>
+      <li>Change your Medicare Advantage plan</li>
+      <li>Drop your Medicare Advantage plan and return to Traditional Medicare with a Medigap plan</li>
+    </ul>
+    <div class="not-box">
+      <p><strong>What this is NOT:</strong> This is not a deadline to change your Medigap (Medicare Supplement) plan — you can shop that any time of year. And if you're not on Medicare yet, you don't need to enroll during this window at all — this period is only for people already enrolled in Medicare.</p>
+    </div>
+  </div>
+
+  <div class="tree-nav" id="treeNav"></div>
+
+  <div id="questionArea">
+    <div class="question-card" id="q1">
+      <h3>What type of coverage do you have right now?</h3>
+      <div class="options">
+        <button class="opt-btn" onclick="selectCoverage('traditional')">Traditional Medicare + Medigap</button>
+        <button class="opt-btn" onclick="selectCoverage('advantage')">Medicare Advantage</button>
+        <button class="opt-btn" onclick="selectCoverage('unknown')">I'm not sure what I have</button>
+        <button class="opt-btn" onclick="selectCoverage('new')">I'm not on Medicare yet</button>
+      </div>
+    </div>
+
+    <!-- TRADITIONAL + MEDIGAP -->
+    <div class="answer-panel" id="panel-traditional">
+      <div class="panel-section">
+        <h3>Traditional Medicare + Medigap: What To Do This Fall</h3>
+        <div class="step-row"><span class="step-num">1</span><p>This is the time to shop your <strong>Part D drug plan</strong> — plans and drug costs change every year, even if you don't.</p></div>
+        <div class="step-row"><span class="step-num">2</span><p>Watch your mail in early October for your <strong>Annual Notice of Change (ANOC)</strong> letter from your current Part D plan — it outlines what's changing for 2027.</p></div>
+        <div class="step-row"><span class="step-num">3</span><p>Watch our video walkthrough at <a href="https://abtinsuranceagency.com/finding-part-d" target="_blank">abtinsuranceagency.com/finding-part-d</a> to learn how to use Medicare.gov to compare and enroll in the best Part D plan for your medications.</p></div>
+        <div class="step-row"><span class="step-num">4</span><p>Do this by <strong>December 7th</strong>.</p></div>
+        <div class="highlight">
+          <p>Recent CMS rule changes limit how much agents and brokers can directly help you enroll in a specific Part D plan. The Medicare.gov website is the best place to compare every available plan in one place — but if you have questions about a specific drug or plan, you can always email us directly.</p>
+        </div>
+        <div class="no-change-box">
+          <p><strong>Your Medigap plan does not need to change during AEP.</strong> Two exceptions: in <strong>Minnesota and Rhode Island</strong>, you can change your Medigap plan without medical underwriting between Oct 15 – Dec 7. Everywhere else, medical underwriting typically applies to a Medigap plan change.</p>
+        </div>
+        <p>Our suggestion: wait until you receive your <strong>Medigap rate increase letter</strong> (usually around your policy's anniversary date) to shop for a lower rate on your Medicare Supplement plan.</p>
+        <div class="state-note">Note: Massachusetts, Connecticut, New York, and Vermont typically don't require medical underwriting for Medigap enrollment at all. Contact us for details on the best value plans in your state and whether you'd qualify for a lower rate.</div>
+      </div>
+
+      <div class="cta-box">
+        <strong>Have questions about your specific Part D or Medigap situation?</strong>
+        <p>We're happy to help — reach out any time.</p>
+        <a class="callbtn" href="mailto:stephanie@abtinsuranceagency.com">Email Us</a>
+      </div>
+    </div>
+
+    <!-- MEDICARE ADVANTAGE -->
+    <div class="answer-panel" id="panel-advantage">
+      <div class="question-card">
+        <h3>Do you want to change to a new Medicare Advantage plan, or drop Advantage and return to Traditional Medicare with a Medigap plan?</h3>
+        <div class="options">
+          <button class="opt-btn" onclick="selectAdvantagePath('newMA')">Change to a new Medicare Advantage plan</button>
+          <button class="opt-btn" onclick="selectAdvantagePath('dropMA')">Drop Advantage, return to Traditional + Medigap</button>
+        </div>
+      </div>
+
+      <div class="answer-panel" id="panel-newMA">
+        <div class="panel-section">
+          <h3>Changing to a New Medicare Advantage Plan</h3>
+          <div class="step-row"><span class="step-num">1</span><p>Gather a list of your current doctors and medications.</p></div>
+          <div class="step-row"><span class="step-num">2</span><p>Contact us directly — we'll help you compare plans against your specific doctors and prescriptions.</p></div>
+          <div class="step-row"><span class="step-num">3</span><p>You can also visit <a href="https://abtinsuranceagency.com/finding-part-c" target="_blank">abtinsuranceagency.com/finding-part-c</a> for a walkthrough on comparing Advantage plans in your area yourself.</p></div>
+        </div>
+        <div class="cta-box">
+          <strong>Ready to compare your options?</strong>
+          <p>Send us your doctor and medication list and we'll find your best fit for 2027.</p>
+          <a class="callbtn" href="mailto:stephanie@abtinsuranceagency.com">Email Us</a>
+        </div>
+      </div>
+
+      <div class="answer-panel" id="panel-dropMA">
+        <div class="panel-section">
+          <h3>Dropping Medicare Advantage for Traditional + Medigap</h3>
+          <p>This move may require <strong>medical underwriting</strong> to qualify for a Medigap plan — but there are some important exceptions:</p>
+          <ul>
+            <li><strong>RI, MN, NY, CT, MA, or VT:</strong> medical underwriting is typically not required.</li>
+            <li><strong>Your Advantage plan was terminated by the carrier:</strong> you have guaranteed issue rights to purchase certain Medigap plans without underwriting.</li>
+            <li><strong>None of the above applies:</strong> you'll likely need to answer health questions to qualify.</li>
+          </ul>
+
+          <div class="qual-list">
+            <p class="q">Example questions used to help gauge Medigap qualification:</p>
+            <div class="qitem">1. In the past 3 years, have you had or been treated for cancer, heart attack, stroke, or COPD?</div>
+            <div class="qitem">2. Do you have diabetes <em>along with</em> neuropathy, retinopathy, or are you taking insulin or certain blood thinners?</div>
+            <div class="qitem">3. Do you have any upcoming tests, treatments, or surgeries that have been scheduled or advised?</div>
+          </div>
+
+          <div class="highlight">
+            <p><strong>If you answered yes to any of these</strong>, you may not qualify for a Medigap plan — we'd advise looking at other Medicare Advantage plans for next year instead. Call or email us with questions.</p>
+          </div>
+
+          <div class="no-change-box">
+            <p><strong>If you may qualify</strong>, apply for your Medigap plan first (with us!) — then once approved, enroll in a standalone Part D plan by December 7th.</p>
+          </div>
+
+          <p>Also good to know: you'll have another opportunity to drop your Medicare Advantage plan each year during the <strong>Medicare Advantage Open Enrollment Period, January 1 – March 31</strong>.</p>
+        </div>
+        <div class="cta-box">
+          <strong>Thinking about dropping your Advantage plan?</strong>
+          <p>Let's talk through whether you'd qualify for Medigap before you make any changes.</p>
+          <a class="callbtn" href="tel:8884659728">Call (888) 465-9728</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNKNOWN -->
+    <div class="answer-panel" id="panel-unknown">
+      <div class="panel-section">
+        <h3>Not Sure What Coverage You Have?</h3>
+        <p>Here's the fastest way to check:</p>
+        <div class="step-row"><span class="step-num">1</span><p>Log into (or create) your account at <strong>MyMedicare.gov</strong></p></div>
+        <div class="step-row"><span class="step-num">2</span><p>Click <strong>"My Plans"</strong> to see your active coverage</p></div>
+        <p>Once you know what you have, come back and select the matching option above — or just give us a call and we'll help you figure it out together.</p>
+      </div>
+      <div class="cta-box">
+        <strong>Want help figuring out your coverage?</strong>
+        <p>We can look it up with you over the phone.</p>
+        <a class="callbtn" href="tel:8884659728">Call (888) 465-9728</a>
+      </div>
+    </div>
+
+    <!-- NEW TO MEDICARE -->
+    <div class="answer-panel" id="panel-new">
+      <div class="panel-section">
+        <h3>Not on Medicare Yet? AEP Doesn't Apply to You.</h3>
+        <p>Good news — you don't need to do anything by December 7th. AEP is only for people already enrolled in Medicare. Depending on your situation, you have a different enrollment window:</p>
+        <ul>
+          <li><strong>New to Medicare:</strong> you have your own <strong>Initial Enrollment Period (IEP)</strong>, centered around your 65th birthday.</li>
+          <li><strong>Retiring from employer coverage:</strong> you have a <strong>Special Enrollment Period (SEP)</strong> to enroll in Part B and/or a Medigap or Advantage plan, timed around when your employer coverage ends.</li>
+        </ul>
+      </div>
+      <div class="cta-box">
+        <strong>Getting close to Medicare and not sure where to start?</strong>
+        <p>We can walk you through your specific timeline.</p>
+        <a class="callbtn" href="tel:8884659728">Call (888) 465-9728</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    This guide is for general educational purposes. Enrollment rules vary by state and individual circumstance — contact us directly for guidance specific to your situation.
+  </footer>
+</div>
+
+<script>
+  function showNav(text){
+    document.getElementById('treeNav').innerHTML = text;
+  }
+  function resetTree(){
+    document.querySelectorAll('.answer-panel').forEach(el => el.classList.remove('active'));
+    document.getElementById('q1').style.display = 'block';
+    showNav('');
+  }
+  function selectCoverage(type){
+    document.getElementById('q1').style.display = 'none';
+    document.querySelectorAll('#questionArea > .answer-panel').forEach(el => el.classList.remove('active'));
+    document.getElementById('panel-' + type).classList.add('active');
+    showNav('<button onclick="resetTree()">← Start over</button>');
+    document.getElementById('panel-' + type).scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  function selectAdvantagePath(type){
+    document.querySelectorAll('#panel-advantage > .answer-panel').forEach(el => el.classList.remove('active'));
+    document.getElementById('panel-' + type).classList.add('active');
+    showNav('<button onclick="resetTree()">← Start over</button> &nbsp;·&nbsp; <button onclick="backToAdvantageQ()">← Back</button>');
+    document.getElementById('panel-' + type).scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  function backToAdvantageQ(){
+    document.querySelectorAll('#panel-advantage > .answer-panel').forEach(el => el.classList.remove('active'));
+    showNav('<button onclick="resetTree()">← Start over</button>');
+    document.getElementById('panel-advantage').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+</script>
+
+</body>
+</html>
