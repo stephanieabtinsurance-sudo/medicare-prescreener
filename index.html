@@ -233,6 +233,49 @@
   }
   .dl-btn:hover{ background:var(--forest-dark); }
 
+  .guide-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    text-align:left;
+  }
+  .guide-card{
+    border:1.5px solid var(--line);
+    border-radius:11px;
+    padding:16px 18px;
+    background:var(--cream);
+  }
+  .guide-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--forest-dark);
+    margin-bottom:4px;
+  }
+  .guide-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.45;
+    margin-bottom:12px;
+  }
+  .guide-actions{
+    display:flex;
+    gap:10px;
+  }
+  .guide-btn{
+    flex:1;
+    text-align:center;
+    padding:11px 10px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .guide-btn.primary{ background:var(--forest); color:var(--cream); }
+  .guide-btn.primary:hover{ background:var(--forest-dark); }
+  .guide-btn.secondary{ background:var(--paper); color:var(--ink-soft); border:1.5px solid var(--line); }
+  .guide-btn.secondary:hover{ border-color:var(--gold); color:var(--gold-dark); }
+
   footer{
     text-align:center;
     margin-top:40px;
@@ -257,8 +300,8 @@
 
   <div class="hero">
     <span class="eyebrow">Turning 65 or helping someone who is?</span>
-    <h1>The Medicare Checklist <em>every</em> new enrollee should have</h1>
-    <p class="sub">A month-by-month roadmap from 6 months before you turn 65 through your annual plan review — built by a licensed agency, not a call center.</p>
+    <h1>Free Medicare Guides <em>built</em> for real decisions</h1>
+    <p class="sub">Enter your email once — then pick the guide you need. Built by a licensed agency, not a call center.</p>
   </div>
 
   <div class="timeline" aria-hidden="true">
@@ -271,8 +314,8 @@
   <div class="card">
 
     <div id="formState">
-      <h2>Get the checklist, free</h2>
-      <p class="desc">Enter your email and we'll send the full PDF checklist straight to your inbox — plus you'll unlock the download below.</p>
+      <h2>Get instant access, free</h2>
+      <p class="desc">Enter your email and you'll get access to our full library of free Medicare guides — no separate signup needed for each one.</p>
 
       <form id="leadForm">
         <label for="fname">First name</label>
@@ -295,9 +338,33 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12l6 6L20 6" stroke="#FAF6EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h2>You're in!</h2>
-      <p>Your checklist is ready to view — and keep an eye on your inbox in case you want to revisit it later.</p>
-      <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/checklist-view.html" target="_blank" class="dl-btn">View Your Checklist</a>
-      <p style="margin-top:16px;font-size:13.5px;"><a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/Medicare%20Checklist%20Abt%20Insurance%20Agency%202025%20%281%29%20%281%29.pdf" target="_blank" style="color:var(--ink-soft);">Prefer a printable PDF?</a></p>
+      <p>Pick the guide you want to view below — and keep an eye on your inbox in case you want to revisit either one later.</p>
+
+      <div class="guide-list">
+
+        <div class="guide-card">
+          <div class="guide-info">
+            <div class="guide-name">Medicare Checklist</div>
+            <div class="guide-desc">Month-by-month roadmap from 6 months before you turn 65 through your annual review.</div>
+          </div>
+          <div class="guide-actions">
+            <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/checklist-view.html" target="_blank" class="guide-btn primary">View Guide</a>
+            <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/Medicare%20Checklist%20Abt%20Insurance%20Agency%202025%20%281%29%20%281%29.pdf" target="_blank" class="guide-btn secondary">PDF</a>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-info">
+            <div class="guide-name">2026 IRMAA Guide</div>
+            <div class="guide-desc">What triggers Medicare's income surcharge, the 2026 brackets, and how to appeal it.</div>
+          </div>
+          <div class="guide-actions">
+            <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/irmaa-guide.html" target="_blank" class="guide-btn primary">View Guide</a>
+            <a href="https://stephanieabtinsurance-sudo.github.io/medicare-prescreener/IRMAA_Guide_Abt_Insurance_Agency.pdf" target="_blank" class="guide-btn secondary">PDF</a>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>
